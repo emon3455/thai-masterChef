@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const NavBar = () => {
     return (
-        <header className="bg-opacity-60 bg-white bg-blend-multiply z-30 w-full">
+        <header className="bg-opacity-60 bg-white bg-blend-multiply fixed top-0 z-30 w-full">
             <div className="container mx-auto">
                 <div className="navbar">
                     <div className="navbar-start">
@@ -15,6 +15,7 @@ const NavBar = () => {
                             <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                                 <li className="text-lg font-semibold"><Link to="/">Home</Link></li>
                                 <li className="text-lg font-semibold"><Link to="/blogs">Blogs</Link></li>
+                                <li className="text-lg font-semibold"><Link to="/login">Login</Link></li>
                             </ul>
                         </div>
                         <a className="btn btn-ghost normal-case text-2xl font-bold" >Thai Master Cheffs</a>
@@ -26,6 +27,8 @@ const NavBar = () => {
                             <ul className="menu menu-horizontal px-1">
                                 <li className="text-lg font-semibold"><Link to="/">Home</Link></li>
                                 <li className="text-lg font-semibold"><Link to="/blogs">Blogs</Link></li>
+                                <li className="text-lg font-semibold"><Link to="/login">Login</Link></li>
+
                             </ul>
                         </div>
 
