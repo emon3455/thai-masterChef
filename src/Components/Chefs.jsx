@@ -26,7 +26,7 @@ const Chefs = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 p-4">
                 {
-                    chefs.slice(0,8).map(cf => <ChefCard key={cf.id} ceff={cf}></ChefCard>)
+                    chefs.map(cf => <ChefCard key={cf.id} ceff={cf}></ChefCard>)
                 }
             </div>
 

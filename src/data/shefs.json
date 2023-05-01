@@ -1,36 +1,51 @@
 [
-    {
-      "id": 1,
-      "chef_picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStI-bU91QwjrKtg5WNneBartSvYxTjMSJLEw&usqp=CAU",
-      "chef_name": "Chef John Doe",
-      "chef_description": "Award-winning chef with 20 years of experience.",
-      "chef_experience": "20 years",
-      "recipe_number": 3,
-      "likes": 100,
-      "recipe_info": [
-        {
-          "recipe_name": "Spaghetti Carbonara",
-          "ingredients": ["spaghetti", "bacon", "eggs", "parmesan cheese", "black pepper"],
-          "cooking_method": "1. Cook spaghetti in boiling water. 2. Fry bacon. 3. Whisk eggs and cheese. 4. Mix everything together.",
-          "rating": 4.5
-        },
-        {
-          "recipe_name": "Beef Wellington",
-          "ingredients": ["beef fillet", "puff pastry", "mushrooms", "shallots", "egg wash"],
-          "cooking_method": "1. Sear beef. 2. Saute mushrooms and shallots. 3. Wrap beef in pastry. 4. Brush with egg wash. 5. Bake.",
-          "rating": 4.8
-        },
-        {
-          "recipe_name": "Lemon Chicken",
-          "ingredients": ["chicken breast", "lemon", "garlic", "rosemary", "olive oil"],
-          "cooking_method": "1. Marinate chicken in lemon juice, garlic, and rosemary. 2. Grill or pan-fry chicken. 3. Serve with lemon wedges.",
-          "rating": 4.2
-        }
-      ]
-    },
+  {
+    "id": 1,
+    "chef_picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsO_xI_J0BcwtsGnvPGrbCYH_Y-DSg1Qz8Fg&usqp=CAU",
+    "chef_name": "Chef John Doe",
+    "chef_description": "Award-winning chef with 20 years of experience.chef known for her innovative Spaghetti Carbonara. Chef John Doe grew up surrounded by the rich flavors and aromas of her homeland, and he blends traditionalBeef Wellington recipes with modern techniques",
+    "chef_experience": "20 years",
+    "recipe_number": 3,
+    "likes": 100,
+    "recipe_info": [
+      {
+        "recipe_name": "Spaghetti Carbonara",
+        "ingredients": ["spaghetti", "bacon", "eggs", "parmesan cheese", "black pepper"],
+        "cooking_method": [
+          "Cook spaghetti in boiling water.",
+          "Fry bacon.",
+          "Whisk eggs and cheese.",
+          "Mix everything together."
+        ],
+        "rating": 4.5
+      },
+      {
+        "recipe_name": "Beef Wellington",
+        "ingredients": ["beef fillet", "puff pastry", "mushrooms", "shallots", "egg wash"],
+        "cooking_method": [
+          "Sear beef.",
+          "Saute mushrooms and shallots.",
+          "Wrap beef in pastry.",
+          "Brush with egg wash.",
+          "Bake."
+        ],
+        "rating": 4.8
+      },
+      {
+        "recipe_name": "Lemon Chicken",
+        "ingredients": ["chicken breast", "lemon", "garlic", "rosemary", "olive oil"],
+        "cooking_method": [
+          "Marinate chicken in lemon juice, garlic, and rosemary.",
+          "Grill or pan-fry chicken.",
+          "Serve with lemon wedges."
+        ],
+        "rating": 4.2
+      }
+    ]
+  },
     {
       "id": 2,
-      "chef_picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo97JE83SBoeJipmlsKyOMB0sVJ5Qe2QgkCQ&usqp=CAU",
+      "chef_picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGXYOY1qpepooY7R0IuiZUjNfb0HWIDR8InwMkXTNI1vb3RyFOu9sEtqCeeTLqc5HHX3k&usqp=CAU",
       "chef_name": "Chef Jane Smith",
       "chef_description": "Michelin-starred chef with a passion for fusion cuisine.",
       "chef_experience": "15 years",
