@@ -1,8 +1,16 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 
 const Recipe = ({ recipe }) => {
+
+    const [favourite , setFavourite] = useState(false);
+
+    const handleFabourite = () =>{
+        toast("Added To Favourite");
+        setFavourite(true);
+    }
 
     return (
         <div className="card  bg-base-100 shadow-xl">
@@ -27,7 +35,7 @@ const Recipe = ({ recipe }) => {
 
                 <p className='font-medium'>Rating: {recipe.rating}</p>
 
-                <button className="btn btn-warning">Fabourite</button>
+                <button onClick={handleFabourite} className="btn btn-warning" disabled={favourite}>Favourite</button>
             </div>
         </div>
     );
