@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const NavBar = () => {
     return (
-        <header className="bg-opacity-60 bg-white bg-blend-multiply fixed top-0 z-30 w-full">
+        <header className="bg-opacity-80 bg-white bg-blend-multiply fixed top-0 z-30 w-full">
             <div className="container mx-auto">
                 <div className="navbar">
                     <div className="navbar-start">
@@ -18,12 +18,12 @@ const NavBar = () => {
                                 <li className="text-lg font-semibold"><Link to="/login">Login</Link></li>
                             </ul>
                         </div>
-                        <a className="btn btn-ghost normal-case text-2xl font-bold" >Thai Master Cheffs</a>
+                        <a className="btn btn-ghost normal-case text-lg md:text-2xl font-bold" >Thai Master Cheffs</a>
                     </div>
                     
                     <div className="navbar-end space-x-2">
 
-                        <div className="navbar-center hidden lg:flex">
+                        <div className="hidden lg:flex">
                             <ul className="menu menu-horizontal px-1">
                                 <li className="text-lg font-semibold"><Link to="/">Home</Link></li>
                                 <li className="text-lg font-semibold"><Link to="/blogs">Blogs</Link></li>
@@ -33,7 +33,7 @@ const NavBar = () => {
                         </div>
 
                         <label className="btn btn-ghost btn-circle avatar">
-                            <div className="w-10 rounded-full">
+                            <div className="w-7 md:w-10 rounded-full">
                                 <img src={"https://img.freepik.com/free-icon/user_318-563642.jpg?q=10&h=200"} />
                             </div>
                         </label>
