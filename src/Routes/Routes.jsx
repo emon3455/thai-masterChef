@@ -31,7 +31,11 @@ const router  = createBrowserRouter([
                 path: "/blogs",
                 element: <Blogs></Blogs>
             },
-            
+            {
+                path: "/chefs/:id",
+                element: <ChefRecipes></ChefRecipes>,
+                loader: ({params})=> fetch(`https://thai-master-cheff-server-emon3455.vercel.app/chefs/${params.id}`) 
+            }
         ]
     }
 ]);
