@@ -8,6 +8,7 @@ import Login from '../Pages/Login/Login';
 import Register from '../Pages/Register/Register';
 import Blogs from '../Pages/Blogs/Blogs';
 import ChefRecipes from '../Pages/ChefRecipes/ChefRecipes';
+import PrivateRoutes from '../PrivateRoutes/PrivateRoutes';
 
 const router  = createBrowserRouter([
     {
@@ -33,7 +34,7 @@ const router  = createBrowserRouter([
             },
             {
                 path: "/chefs/:id",
-                element: <ChefRecipes></ChefRecipes>,
+                element: <PrivateRoutes><ChefRecipes></ChefRecipes></PrivateRoutes>,
                 loader: ({params})=> fetch(`https://thai-master-cheff-server-emon3455.vercel.app/chefs/${params.id}`) 
             }
         ]

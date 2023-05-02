@@ -20,14 +20,17 @@ const AuthProvider = ({children}) => {
     }
 
     const signInUser= (email, password)=>{
+        setLoading(true);
         return signInWithEmailAndPassword(auth, email, password)
     }
 
     const signInWithGoogle = () =>{
+        setLoading(true);
         return signInWithPopup(auth, googleProvider)
     }
 
     const signInWithGithub = () =>{
+        setLoading(true);
         return signInWithPopup(auth , gitProvider)
     }
    
@@ -41,11 +44,13 @@ const AuthProvider = ({children}) => {
         signInUser,
         signInWithGoogle,
         signInWithGithub,
-        logOut
+        logOut,
+        loading
     }
 
     useEffect(()=>{
         const unsubscribe = onAuthStateChanged(auth , createUser=>{
+            setLoading(false);
             setUser(createUser);
         })
 
