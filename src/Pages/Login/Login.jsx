@@ -21,6 +21,11 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
 
+        if(email=== "" || password === ""){
+            setError("Email And Password field cannot be Empty");
+            return;
+        }
+
         if(password.length < 6){
             setError("Password must be atleast 6 character");
             return;
@@ -71,13 +76,13 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input required type="email" placeholder="email" name="email" id="email" className="p-2 border-2 rounded-lg w-full" />
+                            <input  type="email" placeholder="email" name="email" id="email" className="p-2 border-2 rounded-lg w-full" />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input required type="password" id="password" name="password" placeholder="password" className="p-2 border-2 rounded-lg w-full" />
+                            <input type="password" id="password" name="password" placeholder="password" className="p-2 border-2 rounded-lg w-full" />
                         </div>
 
                         <button type="submit" className="btn btn-warning">Login</button>

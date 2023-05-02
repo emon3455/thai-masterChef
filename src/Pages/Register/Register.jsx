@@ -19,6 +19,11 @@ const Register = () => {
         const password = form.password.value;
         const photo = form.photo.value;
 
+        if(email=== "" || password === ""){
+            setError("Email And Password field cannot be Empty");
+            return;
+        }
+
         if(password.length < 6){
             setError("Password have to atleast 6 character");
             return;
@@ -66,13 +71,13 @@ const Register = () => {
                         <label className="label">
                             <span className="label-text">Email</span>
                         </label>
-                        <input required type="email" name="email" placeholder="email" className="p-2 border-2 rounded-lg w-full" />
+                        <input  type="email" name="email" placeholder="email" className="p-2 border-2 rounded-lg w-full" />
                     </div>
                     <div className="w-full">
                         <label className="label">
                             <span className="label-text">Password</span>
                         </label>
-                        <input required type="password" name="password" placeholder="password" className="p-2 border-2 rounded-lg w-full" />
+                        <input  type="password" name="password" placeholder="password" className="p-2 border-2 rounded-lg w-full" />
                     </div>
 
                     <div className="">
