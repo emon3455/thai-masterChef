@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import Lottie from "lottie-react";
-import errors from "../../assets/error.json"
+import errors from "../../assets/error-img.jpg"
 import { Link } from 'react-router-dom'
 
         
@@ -9,7 +8,7 @@ const Error = () => {
     return (
         <div className="h-screen flex flex-col gap-0 justify-center items-center ">
             <div className='h-2/3'>
-                <Lottie className='w-full h-full' animationData={errors} loop={true}></Lottie>
+                <img className='h-full' src={errors}/>
             </div>
             <p className='text-2xl md:text-4xl font-bold mb-4 text-center'>Something Went Wrong!!</p>
             <Link to='/' className='px-2 py-1 font-semibold rounded-lg bg-yellow-400'>
