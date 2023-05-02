@@ -6,7 +6,7 @@
 - Register / Create user.
 - Log In User
 - Chefs information and their Recipes
-- Error Page
+- Few Blogs
 - Select Favourite Button
 
 ### Live Link: 
