@@ -9,7 +9,7 @@ const Banner = () => {
                 <div className="max-w-xl">
                     <h1 className="mb-5 text-5xl font-bold">
                         Welcome To <br />
-                        <span>Thai Chefs Master !!!</span>
+                        <span>Thai Master Chefs !!!</span>
                     </h1>
                     <p className="mb-5">
                         Here you can get best chefs of thailand and they are world famous for their dices. you can select your favourite one and explore some exting and delecious dices.

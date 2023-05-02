@@ -18,7 +18,7 @@ const NavBar = () => {
                                 <li className="text-lg font-semibold"><Link to="/login">Login</Link></li>
                             </ul>
                         </div>
-                        <a className="btn btn-ghost normal-case text-lg md:text-2xl font-bold" >Thai Master Cheffs</a>
+                        <a className="btn btn-ghost normal-case text-lg md:text-2xl font-bold" >Thai Master Chefs</a>
                     </div>
                     
                     <div className="navbar-end space-x-2">
