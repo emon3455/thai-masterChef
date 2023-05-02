@@ -6,7 +6,7 @@ import { AuthContext } from '../Provider/AuthProvider';
 
 const NavBar = () => {
 
-    const user = useContext(AuthContext);
+    const {user} = useContext(AuthContext);
 
     return (
         <header className="bg-opacity-80 bg-white bg-blend-multiply fixed top-0 z-30 w-full">
@@ -34,15 +34,18 @@ const NavBar = () => {
                             </ul>
                         </div>
 
-                        <label className="btn btn-ghost btn-circle avatar">
-                            <div className="w-7 md:w-10 rounded-full">
-                                {
-                                    user ? 
-                                    <img src={"https://img.freepik.com/free-icon/user_318-563642.jpg?q=10&h=200"} />
-                                    :
-                                    <li className="btn btn-warning text-lg font-semibold"><ActiveLink to="/login">Login</ActiveLink></li>
-                                }
-                            </div>
+                        <label className="">
+                           
+                            {
+                                user 
+                                ? 
+                                    <div className=" btn btn-ghost btn-circle avatar">
+                                        <img className='w-7 md:w-10 rounded-full' src={user.photoURL} />
+                                    </div>
+                                :
+                                <li className="btn btn-warning text-lg font-semibold"><ActiveLink to="/login">Login</ActiveLink></li>
+                            }
+
                         </label>
                     </div>
                 </div>

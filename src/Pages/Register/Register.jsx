@@ -1,14 +1,52 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
+import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
+
+    const [error , setError] = useState("");
+    const {createUser} = useContext(AuthContext);
+
+    const handleRegisterSubmit = (e)=>{
+        e.preventDefault();
+        const form  = e.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        const photo = form.photo.value;
+        
+        createUser(email,password)
+        .then(res=>{
+            const regUser = res.user;
+            //for update user info
+            updateProfile(regUser, {
+                displayName: name,
+                photoURL: photo,
+              })
+              .then(() => {
+                console.log("success");
+              })
+              .catch((err) => {
+                setError(err.message)
+              });
+            
+              form.reset();
+            
+        })
+        .catch(er=>{
+            setError(er.message);
+        })
+
+    }
+
     return (
         <div className="flex flex-col justify-center items-center my-14">
             <div className="card w-full max-w-sm shadow-2xl bg-base-100">
-                <form className="card-body">
+                <form onSubmit={handleRegisterSubmit} className="card-body">
                     <h2 className="text-3xl font-bold text-center">Register</h2>
-                    <p className="text-center text-red-600">err</p>
+                    <p className="text-center text-red-600">{error && error}</p>
                     <div className="">
                         <label className="label">
                             <span className="label-text">Name</span>
