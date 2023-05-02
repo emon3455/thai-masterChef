@@ -7,7 +7,9 @@ const ChefCard = ({ ceff }) => {
 
     return (
         <div className="card card-side bg-base-100 shadow-xl">
-            <figure><img className='w-52 h-64 object-fill' src={ceff.chef_picture} alt="cheff" /></figure>
+            <figure>
+                    <img className='w-52 h-64 object-fill' src={ceff.chef_picture} alt="cheff" />
+            </figure>
             <div className="card-body">
                 <h2 className="card-title">{ceff.chef_name}</h2>
                 <p> <span className='text-gray-700 font-semibold'>Experience:</span> {ceff.chef_experience}</p>
