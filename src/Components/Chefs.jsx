@@ -30,16 +30,17 @@ const Chefs = () => {
             <h2 className='text-4xl text-center font-bold my-10'>Our Top Chefs</h2>
 
             {
-                dataLoading ? 
-                <div className="h-96 flex justify-center items-center">
-                    <progress className="progress w-56"></progress>
-                </div>
+                dataLoading 
+                ? 
+                    <div className="h-96 flex justify-center items-center">
+                        <progress className="progress w-56"></progress>
+                    </div>
                 :
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 p-4">
-                    {
-                        chefs.map(cf => <ChefCard key={cf.id} ceff={cf}></ChefCard>) 
-                    }
-                </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 p-4">
+                        {
+                            chefs.map(cf => <ChefCard key={cf.id} ceff={cf}></ChefCard>) 
+                        }
+                    </div>
             }
 
         </section>
