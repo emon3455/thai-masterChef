@@ -1,9 +1,13 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import ActiveLink from './ActiveLink';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const NavBar = () => {
+
+    const user = useContext(AuthContext);
+
     return (
         <header className="bg-opacity-80 bg-white bg-blend-multiply fixed top-0 z-30 w-full">
             <div className="container mx-auto">
@@ -16,7 +20,6 @@ const NavBar = () => {
                             <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                                 <li className="text-lg font-semibold"><ActiveLink to="/">Home</ActiveLink></li>
                                 <li className="text-lg font-semibold"><ActiveLink to="/blogs">Blogs</ActiveLink></li>
-                                <li className="text-lg font-semibold"><ActiveLink to="/login">Login</ActiveLink></li>
                             </ul>
                         </div>
                         <a className="btn btn-ghost normal-case text-lg md:text-2xl font-bold" >Thai Master Chefs</a>
@@ -28,13 +31,17 @@ const NavBar = () => {
                             <ul className="menu menu-horizontal px-1">
                                 <li className="text-lg font-semibold"><ActiveLink to="/">Home</ActiveLink></li>
                                 <li className="text-lg font-semibold"><ActiveLink to="/blogs">Blogs</ActiveLink></li>
-                                <li className="text-lg font-semibold"><ActiveLink to="/login">Login</ActiveLink></li>
                             </ul>
                         </div>
 
                         <label className="btn btn-ghost btn-circle avatar">
                             <div className="w-7 md:w-10 rounded-full">
-                                <img src={"https://img.freepik.com/free-icon/user_318-563642.jpg?q=10&h=200"} />
+                                {
+                                    user ? 
+                                    <img src={"https://img.freepik.com/free-icon/user_318-563642.jpg?q=10&h=200"} />
+                                    :
+                                    <li className="btn btn-warning text-lg font-semibold"><ActiveLink to="/login">Login</ActiveLink></li>
+                                }
                             </div>
                         </label>
                     </div>
