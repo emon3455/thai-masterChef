@@ -65,7 +65,7 @@ const NavBar = () => {
                                 user 
                                 ? 
                                 <div className="btn btn-ghost btn-circle avatar">
-                                    <img className='w-7 md:w-10 rounded-full' src={user.photoURL} />
+                                    <img className='w-7 md:w-10 rounded-full' src={user.photoURL} title={`${user.displayName ? user.displayName : ""}`}/>
                                 </div>
                                 :
                                 <li className="p-1 md:px-2 list-none rounded-lg btn-warning text-lg font-semibold"><ActiveLink to="/login">Login</ActiveLink></li>

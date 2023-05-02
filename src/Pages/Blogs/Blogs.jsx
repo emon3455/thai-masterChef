@@ -4,7 +4,7 @@ import React from 'react';
 
 const Blogs = () => {
     return (
-        <div className='mt-20 bg-gray-50 py-10'>
+        <div className='mt-10 bg-gray-50 py-10'>
 
             <h1 className='text-3xl font-bold my-5 text-center'>Blog Posts</h1>
 
