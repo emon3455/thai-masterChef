@@ -4,30 +4,44 @@ import React from 'react';
 import { toast } from 'react-toastify';
 
 const Contact = () => {
+
+    const handleSend = (e) =>{
+        e.preventDefault();
+        const email = e.target.email.value;
+        const message = e.target.message.value;
+        if(message){
+            toast("Message Send")
+        }
+        else{
+            toast("Please Enter Your message first!!");
+        }
+        e.target.reset();
+    }
+
     return (
         <div className="bg-violet-100 p-6">
             <h2 className='text-center my-5 text-4xl font-bold'>Contact</h2>
             <div className=' mt-16 md:mt-4 flex flex-col md:flex-row justify-between items-center h-2/3 '>
                 <div className=" w-full md:w-1/2 mx-auto card flex-shrink-0 max-w-sm shadow-2xl bg-base-100">
-                    <div className="card-body">
+                    <form onSubmit={handleSend} className="card-body">
                         <h2 className="text-3xl text-center font-semibold">Send Message</h2>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input required type="email" id="email" placeholder="email" className="input input-bordered" />
+                            <input required type="email" name="email" id="email" placeholder="email" className="input input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Message</span>
                             </label>
-                            <textarea placeholder="Message" className="bg-gray-100 rounded-lg p-2 h-24" />
+                            <textarea name='message' placeholder="Message" className="bg-gray-100 rounded-lg p-2 h-24" />
                         </div>
 
                         <div className="form-control mt-6">
-                            <button onClick={()=> toast("Message Send!!")} className="btn btn-warning">Send</button>
+                            <button type='submit' className="btn btn-warning">Send</button>
                         </div>
-                    </div>
+                    </form>
                 </div>
                 <div className="w-full md:w-1/2 p-4 mx-auto">
                     <h2 className="text-3xl text-center font-semibold mb-4">Our Location</h2>

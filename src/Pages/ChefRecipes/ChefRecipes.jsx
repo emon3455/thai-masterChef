@@ -9,15 +9,17 @@ const ChefRecipes = () => {
     const recipes = cheff.recipe_info;
 
     return (
-        <div className='container mx-auto mt-24 mb-20'>
+        <div className='container mx-auto mt-20 mb-20'>
 
-            <div className="p-4">
-                <div className="mx-auto w-full md:w-1/2 lg:w-1/3 card bg-base-100 shadow-xl">
-                    <figure><img src={cheff.chef_picture} alt="Shoes" /></figure>
-                    <div className="card-body">
+            <h2 className='text-center text-4xl font-bold my-4'>Chefs and Their Recipes</h2>
+
+            <div className="p-2">
+                <div className="mx-auto w-full md:w-1/2 lg:w-1/3 card bg-violet-100 shadow-xl">
+                    <figure><img className='py-2' src={cheff.chef_picture} alt="Shoes" /></figure>
+                    <div className="p-4">
                         <h2 className="card-title">{cheff.chef_name}</h2>
                         <p className='text-justify text-gray-700'>{cheff.chef_description}</p>
-                        <div className="flex">
+                        <div className="flex justify-between my-2">
                             <p className='font-semibold'>Likes: {cheff.likes}</p>
                             <p className='text-end font-semibold'>Recipe No: {cheff.recipe_number}</p>
                         </div>
