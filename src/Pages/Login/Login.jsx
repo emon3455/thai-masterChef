@@ -8,7 +8,7 @@ const Login = () => {
 
 
     const [error , setError] = useState("");
-    const {signInUser , signInWithGoogle} = useContext(AuthContext);
+    const {signInUser , signInWithGoogle , signInWithGithub} = useContext(AuthContext);
 
     const handleLoginSubmit = (e) =>{
         setError("")
@@ -25,6 +25,8 @@ const Login = () => {
         signInUser(email , password)
         .then(res=>{
             const logedUser = res.user;
+
+            form.reset();
         })
         .catch(er=>{
             setError(er.message);
@@ -34,6 +36,16 @@ const Login = () => {
 
     const handleGoogleLogin = () =>{
         signInWithGoogle()
+        .then(res=>{
+            const logedUser = res.user;
+        })
+        .catch(er=>{
+            setError(er.message);
+        })
+    }
+
+    const handleGithubLogin = () =>{
+        signInWithGithub()
         .then(res=>{
             const logedUser = res.user;
         })
@@ -75,7 +87,7 @@ const Login = () => {
                             <img className="h-6 w-6" src="https://github.com/emon3455/demo-picture/blob/main/travel-images/google.png?raw=true" alt="" />
                             <span>Continue with Google</span>
                         </div>
-                        <div  className="w-full flex justify-between btn btn-ghost bg-gray-100">
+                        <div onClick={handleGithubLogin} className="w-full flex justify-between btn btn-ghost bg-gray-100">
                             <img className="h-6 w-6" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="" />
                             <span>Continue with Github</span>
                         </div>

@@ -30,7 +30,13 @@ const NavBar = () => {
                             </label>
                             <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                                 <li className="text-lg font-semibold"><ActiveLink to="/">Home</ActiveLink></li>
-                                <li className="text-lg font-semibold"><ActiveLink to="/blogs">Blogs</ActiveLink></li>
+                                <li className="text-lg font-semibold"><ActiveLink to="/blogs">Blogssss</ActiveLink></li>
+                                {
+                                    user &&
+                                    <div className="">
+                                        <button onClick={handleLogout} className='btn-warning ml-2 lg:hidden p-2 rounded-lg font-semibold'>Log Out</button>
+                                    </div>
+                                }
                             </ul>
                         </div>
                         <a className="btn btn-ghost normal-case text-lg md:text-2xl font-bold" >Thai Master Chefs</a>
@@ -49,7 +55,7 @@ const NavBar = () => {
                             {
                                 user &&
                                 <div className="">
-                                    <button onClick={handleLogout} className='btn-warning p-2 rounded-lg font-semibold'>Log Out</button>
+                                    <button onClick={handleLogout} className='btn-warning hidden lg:block lg:p-2 rounded-lg font-semibold'>Log Out</button>
                                 </div>
                             }
                         </label>
@@ -62,7 +68,7 @@ const NavBar = () => {
                                     <img className='w-7 md:w-10 rounded-full' src={user.photoURL} />
                                 </div>
                                 :
-                                <li className="btn btn-warning text-lg font-semibold"><ActiveLink to="/login">Login</ActiveLink></li>
+                                <li className="p-1 md:px-2 list-none rounded-lg btn-warning text-lg font-semibold"><ActiveLink to="/login">Login</ActiveLink></li>
                             }
 
                         </label>

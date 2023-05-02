@@ -1,12 +1,13 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { createContext, useEffect, useState } from 'react';
-import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut , GithubAuthProvider } from "firebase/auth";
 import { app } from '../firebase/firebase.config';
 
 export const AuthContext = createContext(null)
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
+const gitProvider = new GithubAuthProvider();
 
 const AuthProvider = ({children}) => {
 
@@ -26,6 +27,10 @@ const AuthProvider = ({children}) => {
     const signInWithGoogle = () =>{
         return signInWithPopup(auth, googleProvider)
     }
+
+    const signInWithGithub = () =>{
+        return signInWithPopup(auth , gitProvider)
+    }
    
     const logOut = () =>{
         return signOut(auth);
@@ -36,6 +41,7 @@ const AuthProvider = ({children}) => {
         createUser,
         signInUser,
         signInWithGoogle,
+        signInWithGithub,
         logOut
     }
 
