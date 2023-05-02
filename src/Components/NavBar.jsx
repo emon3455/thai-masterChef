@@ -3,10 +3,21 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import ActiveLink from './ActiveLink';
 import { AuthContext } from '../Provider/AuthProvider';
+import { toast } from 'react-toastify';
 
 const NavBar = () => {
 
-    const {user} = useContext(AuthContext);
+    const {user,logOut} = useContext(AuthContext);
+
+    const handleLogout = () =>{
+        logOut()
+        .then(res=>{
+            toast("Log Out Done!!")
+        })
+        .catch(er=>{
+            toast("Please Try Again !!");
+        })
+    }
 
     return (
         <header className="bg-opacity-80 bg-white bg-blend-multiply fixed top-0 z-30 w-full">
@@ -34,14 +45,22 @@ const NavBar = () => {
                             </ul>
                         </div>
 
-                        <label className="">
-                           
+                        <label>
+                            {
+                                user &&
+                                <div className="">
+                                    <button onClick={handleLogout} className='btn-warning p-2 rounded-lg font-semibold'>Log Out</button>
+                                </div>
+                            }
+                        </label>
+
+                        <label className=""> 
                             {
                                 user 
                                 ? 
-                                    <div className=" btn btn-ghost btn-circle avatar">
-                                        <img className='w-7 md:w-10 rounded-full' src={user.photoURL} />
-                                    </div>
+                                <div className="btn btn-ghost btn-circle avatar">
+                                    <img className='w-7 md:w-10 rounded-full' src={user.photoURL} />
+                                </div>
                                 :
                                 <li className="btn btn-warning text-lg font-semibold"><ActiveLink to="/login">Login</ActiveLink></li>
                             }

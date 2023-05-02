@@ -8,7 +8,7 @@ const Login = () => {
 
 
     const [error , setError] = useState("");
-    const {signInUser} = useContext(AuthContext);
+    const {signInUser , signInWithGoogle} = useContext(AuthContext);
 
     const handleLoginSubmit = (e) =>{
         setError("")
@@ -24,12 +24,22 @@ const Login = () => {
 
         signInUser(email , password)
         .then(res=>{
-            
+            const logedUser = res.user;
         })
         .catch(er=>{
             setError(er.message);
         })
 
+    }
+
+    const handleGoogleLogin = () =>{
+        signInWithGoogle()
+        .then(res=>{
+            const logedUser = res.user;
+        })
+        .catch(er=>{
+            setError(er.message);
+        })
     }
 
     return (
@@ -61,7 +71,7 @@ const Login = () => {
                             OR
                         </p>
 
-                        <div className="w-full flex justify-between btn btn-ghost mb-2 bg-gray-100">
+                        <div onClick={handleGoogleLogin} className="w-full flex justify-between btn btn-ghost mb-2 bg-gray-100">
                             <img className="h-6 w-6" src="https://github.com/emon3455/demo-picture/blob/main/travel-images/google.png?raw=true" alt="" />
                             <span>Continue with Google</span>
                         </div>

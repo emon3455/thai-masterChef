@@ -22,12 +22,21 @@ const AuthProvider = ({children}) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password)
     }
+
+    const signInWithGoogle = () =>{
+        return signInWithPopup(auth, googleProvider)
+    }
    
+    const logOut = () =>{
+        return signOut(auth);
+    }
 
     const authInfo ={
         user,
         createUser,
         signInUser,
+        signInWithGoogle,
+        logOut
     }
 
     useEffect(()=>{
