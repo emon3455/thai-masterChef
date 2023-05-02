@@ -18,13 +18,29 @@ const AuthProvider = ({children}) => {
         return createUserWithEmailAndPassword(auth,email,password)
     }
 
+    const signInUser= (email, password)=>{
+        setLoading(true);
+        return signInWithEmailAndPassword(auth, email, password)
+    }
    
 
     const authInfo ={
         user,
         createUser,
-        
+        signInUser,
     }
+
+    useEffect(()=>{
+        const unsubscribe = onAuthStateChanged(auth , createUser=>{
+            setLoading(false)
+            setUser(createUser);
+        })
+
+        return ()=>{
+            unsubscribe();
+        }
+
+    },[])
 
     return (
         <AuthContext.Provider value={authInfo}>

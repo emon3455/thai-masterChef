@@ -3,6 +3,7 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
+import { toast } from 'react-toastify';
 
 const Register = () => {
 
@@ -10,12 +11,18 @@ const Register = () => {
     const {createUser} = useContext(AuthContext);
 
     const handleRegisterSubmit = (e)=>{
+        setError("")
         e.preventDefault();
         const form  = e.target;
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
         const photo = form.photo.value;
+
+        if(password.length < 6){
+            setError("Password have to atleast 6 character");
+            return;
+        }
         
         createUser(email,password)
         .then(res=>{
@@ -26,17 +33,19 @@ const Register = () => {
                 photoURL: photo,
               })
               .then(() => {
-                console.log("success");
+                toast("User Successfully created!!");
               })
               .catch((err) => {
                 setError(err.message)
+                return;
               });
             
               form.reset();
-            
+              
         })
         .catch(er=>{
             setError(er.message);
+            return;
         })
 
     }

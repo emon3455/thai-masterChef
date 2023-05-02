@@ -1,16 +1,44 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const Login = () => {
+
+
+    const [error , setError] = useState("");
+    const {signInUser} = useContext(AuthContext);
+
+    const handleLoginSubmit = (e) =>{
+        setError("")
+        e.preventDefault();
+        const form  = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        if(password.length < 6){
+            setError("Password must be atleast 6 character");
+            return;
+        }
+
+        signInUser(email , password)
+        .then(res=>{
+            
+        })
+        .catch(er=>{
+            setError(er.message);
+        })
+
+    }
+
     return (
         <div className='mb-12'>
             <div className="flex justify-center mt-14">
                 <div className="card w-full max-w-sm shadow-2xl bg-base-100">
-                    <form className="card-body">
+                    <form onSubmit={handleLoginSubmit} className="card-body">
                         <h2 className="text-3xl font-bold text-center">Login</h2>
-                        <p className="text-center text-red-600"> errr </p>
+                        <p className="text-center text-red-600"> {error && error} </p>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
