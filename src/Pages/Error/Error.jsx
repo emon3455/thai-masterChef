@@ -1,12 +1,23 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import Lottie from "lottie-react";
+import errors from "../../assets/error.json"
+import { Link } from 'react-router-dom'
 
+        
 const Error = () => {
     return (
-        <div>
-            <h2>This is Error Page</h2>
+        <div className="h-screen flex flex-col gap-0 justify-center items-center ">
+            <div className='h-2/3'>
+                <Lottie className='w-full h-full' animationData={errors} loop={true}></Lottie>
+            </div>
+            <p className='text-2xl md:text-4xl font-bold mb-4 text-center'>Something Went Wrong!!</p>
+            <Link to='/' className='px-2 py-1 font-semibold rounded-lg bg-yellow-400'>
+                Please Go Back To Homepage
+            </Link>
         </div>
     );
+    
 };
 
 export default Error;
