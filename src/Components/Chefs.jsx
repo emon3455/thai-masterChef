@@ -10,7 +10,7 @@ const Chefs = () => {
 
     useEffect(()=>{
         setDataLoading(true);
-        fetch("https://thai-master-cheff-server-emon3455.vercel.app/chefs")
+        fetch("https://thai-master-cheff-server.vercel.app/chefs")
         .then(res=> res.json())
         .then(data=> {
             setChefs(data)

@@ -30,7 +30,7 @@ const NavBar = () => {
                             </label>
                             <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                                 <li className="text-lg font-semibold"><ActiveLink to="/">Home</ActiveLink></li>
-                                <li className="text-lg font-semibold"><ActiveLink to="/blogs">Blogssss</ActiveLink></li>
+                                <li className="text-lg font-semibold"><ActiveLink to="/blogs">Blogs</ActiveLink></li>
                                 {
                                     user &&
                                     <div className="">

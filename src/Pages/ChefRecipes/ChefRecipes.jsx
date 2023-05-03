@@ -2,7 +2,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Recipe from '../../Components/Recipe';
-import LazyLoad from 'react-lazy-load';
 
 const ChefRecipes = () => {
 
@@ -17,9 +16,7 @@ const ChefRecipes = () => {
             <div className="p-2">
                 <div className="mx-auto w-full md:w-1/2 lg:w-1/3 card bg-violet-100 shadow-xl">
                     <figure className='mx-auto'>
-                        <LazyLoad height={220} width={200}>
-                            <img className='py-2' src={cheff.chef_picture} alt="Shoes" />
-                        </LazyLoad>
+                        <img className='py-2 ' src={cheff.chef_picture} alt="Shoes" />
                     </figure>
                     <div className="p-4">
                         <h2 className="card-title">{cheff.chef_name}</h2>
