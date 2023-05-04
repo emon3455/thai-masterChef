@@ -68,7 +68,7 @@ const BlogPosts = () => {
 
                         Node js is a js runtime javeScript environment that allows developers to write server side code using javeScript. It provides an non-blocking ,event-driven,  I/O model, which makes it lightweight and efficient. it used for server side applications. <br />
 
-                        is a web application framework built on top of node js. It provides an sets of feachers and tools for building web applications. Express.js can help developer by simplify and streamline the development process using it's common tools and conventions. <br />
+                        Express js is a web application framework built on top of node js. It provides an sets of feachers and tools for building web applications. Express.js can help developer by simplify and streamline the development process using it's common tools and conventions. <br />
 
                     </Text>
                 </View>
@@ -77,7 +77,7 @@ const BlogPosts = () => {
                     <Text style={styles.title}>
                         What is a custom hook, and why will you create a custom hook? <br />
                     </Text>
-                    <Text style={styles.text}>
+                    <Text  style={styles.text}>
 
                         Custom hook is a reuseable javascript function that used in react to share bunch of code between multiple components. It allows us to extract and reuse logic that will commonly shared on components. <br />
 
